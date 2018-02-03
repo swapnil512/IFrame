@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Parent Page</title>
+
+<script> 
+ 
+window.addEventListener( 'message', function(message) {
+  var jsonObject = message.data;
+  document.getElementById('message').innerHTML = jsonObject.id;
+  document.getElementById('messageData').innerHTML = jsonObject.data.messagetext;
+} );
+ 
+ 
+</script>
+</head>
+ 
+<body>
+<h1>Parent Page</h1>
+ 
+<p><b>Message ID :</b> <span id="message"/></p>
+<p><b>Message Content :</b> <span id="messageData"/></p>
+ 
+<iframe id="iFrame" src="ChildIframe.html" />
+ </body>
+</html>

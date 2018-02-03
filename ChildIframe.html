@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Child Page</title>
+<script> 
+ 
+ 
+function sendMessage() {
+	var msg= document.getElementById("firstname").value+" "+document.getElementById("lastname").value;
+  var jsonObject = { id: 'Iframe_Msg', data: { messagetext: msg }};
+  parent.postMessage(jsonObject, '*');
+}
+</script>
+</head>
+ 
+<body>
+<h3>iFrame Content</h3>
+ 
+<form>
+<label>Firstname: </label>
+<input type="text" id="firstname">
+<br>
+<label>Lastname: </label>
+<input type="text" id="lastname">
+<br>
+</form>
+ 
+<p><button onclick="sendMessage()">Send data to parent page.</button></p>
+
+ 
+ </body>
+</html>
+
